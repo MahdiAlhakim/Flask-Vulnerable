@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Comments{% endblock %}
+
+{% block content %}
+    <h1>Comments</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <textarea name="content" class="form-control" placeholder="Leave a comment"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <hr/>
+    <h2>All Comments</h2>
+    {% for comment in comments %}
+        <div class="card mb-3">
+            <div class="card-body">
+                {{ comment.content|safe }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %} 

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+    <h1>Search CME Offshore</h1>
+    <form method="GET">
+        <div class="mb-3">
+            <label for="query" class="form-label">Search Query:</label>
+            <input type="text" name="q" class="form-control" value="{{ query }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <h3>Search results for: {{ query|safe }}</h3>
+    <ul class="list-group">
+        {% for result in results %}
+            <li class="list-group-item">{{ result }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back to Home</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <p>Welcome, admin! You now have access to the secured dashboard of CME Offshore.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}
